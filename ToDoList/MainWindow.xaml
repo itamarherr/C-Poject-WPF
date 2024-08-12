@@ -1,0 +1,69 @@
+﻿<Window x:Class="ToDoList.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoList"
+        xmlns:common="clr-namespace:Common.Controls;assembly=Common"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="To Do List" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        
+        <DataGrid Grid.Row="1" x:Name="ToDoDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding Tasks, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" SelectionChanged="ToDoDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="*"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="*"/>
+                <DataGridTemplateColumn Header="Actions" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Edit" Click="EditTask_Click" Margin="5,0"/>
+                                <Button Content="Delete" Click="RemoveTask_Click" Margin="5,0"/>
+                                <CheckBox IsChecked="{Binding IsComplete, UpdateSourceTrigger=PropertyChanged}" Content="Complete" Margin="5,0"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Label Content="Enter Task name:" Margin="6 0 10 0"/>
+
+            <TextBox x:Name="TaskTextBox" Margin="10 0 10 20" />
+
+            <Label Content="Submit:" Margin="6 0 10 0"/>
+            
+            <Button  Margin="10 0 10 20" Click="AddTask_Click" >
+                <Image Source="/Resources/pencil icon.png" Width="16" Height="16" />
+            </Button>
+
+            <Label Content="Choose category:" Margin="6 0 10 0"/>
+
+            <ComboBox  x:Name="CategoryComboBox" Margin="10 0 10 20" SelectedIndex="0" SelectionChanged="CategoryComboBox_SelectionChanged">
+
+                <ComboBoxItem Content="All" />
+                <ComboBoxItem Content="Personal"  />
+                <ComboBoxItem Content="Work" />
+                <ComboBoxItem Content="Shopping" />
+                <ComboBoxItem Content="Finance" />
+                <ComboBoxItem Content="Study" />
+            </ComboBox>
+        </StackPanel>
+
+        
+        <common:HeaderMenu Grid.Row="0" Grid.Column="0"  Height="15"  />
+
+
+    </Grid>
+</Window>

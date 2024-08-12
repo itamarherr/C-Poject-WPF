@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\calendar icon.png" />
+    <None Remove="Resources\checkmark icon.png" />
+    <None Remove="Resources\Main.png" />
+    <None Remove="Resources\pencil icon.png" />
+    <None Remove="Resources\trash can icon.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProjectGalary\Common\Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\calendar icon.png" />
+    <Resource Include="Resources\checkmark icon.png" />
+    <Resource Include="Resources\Main.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\pencil icon.png" />
+    <Resource Include="Resources\trash can icon.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tasks.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

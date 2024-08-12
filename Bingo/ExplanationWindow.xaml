@@ -1,0 +1,28 @@
+﻿<Window x:Class="Bingo.ExplanationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:common="clr-namespace:Common.Controls;assembly=Common"
+        xmlns:local="clr-namespace:Bingo"
+        mc:Ignorable="d"
+        Title="ExplanationWindow" Height="450" Width="800">
+    <Grid>
+        <common:HeaderMenu Grid.Row="0" />
+        <StackPanel Margin="10,20,30,20">
+            <TextBlock Text="Welcome to my Bingo Game " FontSize="20" FontWeight="Bold" Margin="0 0 0 20"/>
+
+            <TextBlock Text="Developed as part of my C# project. By clicking the Start Game button you will able to play the Bingo game." FontSize="15" TextWrapping="Wrap" Margin="0 0 0 10"/>
+
+            <TextBlock Text="you can start by clicking on the Druw number button and see if the number that is drawn is a match to your numbers." FontSize="15" TextWrapping="Wrap" Margin="0 0 0 10"/>
+
+            <TextBlock Text="If you will get a complete horizontal line, a complete vertical line or a complete diagonal you will win the game. Injoy!." FontSize="15" TextWrapping="Wrap" Margin="0 0 0 10"/>
+        </StackPanel>
+        <Button Content="Start Game" 
+                VerticalAlignment="Bottom" 
+                HorizontalAlignment="Center"
+                Margin="0,0,0,20"
+                Click="StartGame_Click" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,103 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Resources\Word of Animals\**" />
+    <EmbeddedResource Remove="Resources\Word of Animals\**" />
+    <None Remove="Resources\Word of Animals\**" />
+    <Page Remove="Resources\Word of Animals\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Animals Images\Bear.jpg" />
+    <None Remove="Resources\Animals Images\Cat.jpg" />
+    <None Remove="Resources\Animals Images\Dog.jpg" />
+    <None Remove="Resources\Animals Images\Dolfhin.jpg" />
+    <None Remove="Resources\Animals Images\Elefent.jpg" />
+    <None Remove="Resources\Animals Images\Girafe.jpg" />
+    <None Remove="Resources\Animals Images\Horse.jpg" />
+    <None Remove="Resources\Animals Images\Monky.jpg" />
+    <None Remove="Resources\Animals Images\WordCat.jpg" />
+    <None Remove="Resources\Animals Images\WordDog.jpg" />
+    <None Remove="Resources\Animals Images\WordHorse.jpg" />
+    <None Remove="Resources\Background.jpg" />
+    <None Remove="Resources\Bear.jpg" />
+    <None Remove="Resources\Cat.jpg" />
+    <None Remove="Resources\Dog.jpg" />
+    <None Remove="Resources\Dog.webp" />
+    <None Remove="Resources\Dolfhin.jpg" />
+    <None Remove="Resources\Draw.jpeg" />
+    <None Remove="Resources\Elefent.jpg" />
+    <None Remove="Resources\Girafe.jpg" />
+    <None Remove="Resources\Horse.jpg" />
+    <None Remove="Resources\Main.png" />
+    <None Remove="Resources\Monky.jpg" />
+    <None Remove="Resources\Solved.jpg" />
+    <None Remove="Resources\winner-1.png" />
+    <None Remove="Resources\winner-2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProjectGalary\Common\Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Animals Images\Horse.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Animals Images\Bear.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Animals Images\Cat.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Animals Images\Dog.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Animals Images\Dolfhin.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Animals Images\Elefent.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Animals Images\Girafe.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Animals Images\Monky.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Background.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Draw.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Main.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Solved.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\winner-1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\winner-2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>

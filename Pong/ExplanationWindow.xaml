@@ -1,0 +1,36 @@
+﻿<Window x:Class="Pong.ExplanationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pong"
+        mc:Ignorable="d"
+        Title="ExplanationWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock  Grid.Row="0" Text="Welcome to my Pong Game! " FontSize="20" FontWeight="Bold" Margin="0 0 0 20"/>
+        <StackPanel Grid.Row="1">
+        <TextBlock Text="Developed as part of my C# project. By clicking the Start Game button you will able to play the Pong game." FontSize="15" TextWrapping="Wrap" Margin="0 0 0 10"/>
+
+            <TextBlock Text="This is a game for two players. The player on the right moves the pedal with the up and down arrows. And the player on the left moves the pedal with the W and S keys." FontSize="15" TextWrapping="Wrap" Margin="0 0 0 10"/>
+
+            <TextBlock  Text=" There is a start button and a pause button. There is a scoreboard where you can track who is leading." FontSize="15" TextWrapping="Wrap" Margin="0 0 0 10"/>
+
+            <TextBlock  Text=" There are three levels of difficulty that differ one from the other in the speed of the ball, its angle and the length of the pedal" FontSize="15" TextWrapping="Wrap" Margin="0 0 0 10"/>
+            
+            <TextBlock  Text="Injoy!" FontSize="15" TextWrapping="Wrap" Margin="0 0 0 10"/>
+            
+        </StackPanel>
+        
+        <Button Grid.Row="2" Content="Start Game" 
+         VerticalAlignment="Bottom" 
+         HorizontalAlignment="Center"
+         Margin="0,0,0,20"
+         Click="StartGame_Click" />
+
+    </Grid>
+</Window>

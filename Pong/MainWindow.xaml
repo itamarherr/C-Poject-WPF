@@ -1,0 +1,71 @@
+﻿<Window x:Class="Pong.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pong"
+        xmlns:controls="clr-namespace:Pong.Controls"
+        xmlns:common="clr-namespace:Common.Controls;assembly=Common"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="7*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" >
+            <TextBlock Text="SCORE BOARD" Margin="20 10 10 10" FontSize="15" FontWeight="SemiBold" HorizontalAlignment="Center"/>
+            <TextBlock  Margin="20 0 0 0" FontSize="12" FontWeight="Light">
+                <Run Text="Left Player:"/>
+                <Run Text="{Binding LeftPlayerScore}"/>
+            </TextBlock>
+            
+            <TextBlock  Margin="20 0 0 10" FontSize="12" FontWeight="Light">
+                <Run Text="Right Player:"/>
+                <Run Text="{Binding RightPlayerScore}"/>
+            </TextBlock>
+            </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <TextBlock Margin="10" FontSize="15" FontWeight="DemiBold" Text="GAME LEVEL" HorizontalAlignment="Center"/>
+            <Button Content="Beginner" Margin="10" Name="Beginner_Btn" Click="Level_ClickHandler"/>
+            <Button Content="Intermediate" Margin="10" Name="Intermediate_Btn" Click="Level_ClickHandler"/>
+            <Button Content="Professional" Margin="10" Name="Professional_Btn" Click="Level_ClickHandler"/>
+        </StackPanel>
+       
+
+        <StackPanel Grid.Row="1" Name="ButtonPanel" Background="Gray">
+            <TextBlock Text="PONG" Margin="10" FontSize="25" FontWeight="Heavy" HorizontalAlignment="Center" Background="Gray"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Start" Name="StartButton" FontSize="13" Width="50" Margin="10, 0, 10, 20"  Click="Start_Click" HorizontalAlignment="Center"/>
+                <Button Grid.Column="2" Content="Pause" Name="PauseButton" FontSize="13"  Width="50" Margin="10, 0, 10, 20" Click="Pause_Click" HorizontalAlignment="Left"/>
+            </Grid>
+
+
+        </StackPanel>
+
+        <Canvas  Grid.Row="2" x:Name="GameCanvas" Background="Black"/>
+        <common:HeaderMenu Grid.Row="0" Grid.Column="0"  Height="15"  />
+
+
+
+
+    </Grid>
+
+
+
+</Window>

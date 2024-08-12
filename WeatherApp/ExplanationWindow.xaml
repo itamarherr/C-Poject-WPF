@@ -1,0 +1,38 @@
+﻿<Window x:Class="WeatherApp.ExplanationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp"
+        mc:Ignorable="d"
+        Title="ExplanationWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Welcome to My Weather App!" FontSize="25"/>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="This App was Developed as part of my C# project." FontSize="15" TextWrapping="Wrap" Margin="10 0 0 10"/>
+
+            <TextBlock Text=" By clicking the Start App button you will able to use the app." FontSize="15" TextWrapping="Wrap" Margin="10 0 0 10"/>
+
+            <TextBlock Text="In this application you can see what the weather is like anywhere in the world." FontSize="15" TextWrapping="Wrap" Margin="10 0 0 10"/>
+
+            <TextBlock  Text="By typing the name of the desired city or region, you can see current weather data including: temperature, humidity, wind speed, and the state of the clouds." FontSize="15" TextWrapping="Wrap" Margin="10 0 0 10"/>
+
+            <TextBlock  Text="In addition, you can see the forecast for the next few days in the location you have chosen." FontSize="15" TextWrapping="Wrap" Margin="10 0 0 10"/>
+
+            <TextBlock  Text="Injoy!" FontSize="15" TextWrapping="Wrap" Margin="10 0 0 10"/>
+
+        </StackPanel>
+
+        <Button Grid.Row="2" Content="Start App" 
+         VerticalAlignment="Bottom" 
+         HorizontalAlignment="Center"
+         Margin="0,0,0,20"
+         Click="StartApp_Click" />
+
+    </Grid>
+</Window>
