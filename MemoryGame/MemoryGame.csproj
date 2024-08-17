@@ -50,6 +50,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\ProjectGalary\Common\Common.csproj" />
+ 
   </ItemGroup>
 
   <ItemGroup>

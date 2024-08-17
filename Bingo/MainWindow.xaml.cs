@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Bingo.Controls;
 using Bingo.Models;
+using Common;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Bingo;

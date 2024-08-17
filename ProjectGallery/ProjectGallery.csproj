@@ -12,4 +12,14 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProjectGalary\Common\Common.csproj" />
+    <ProjectReference Include="..\Bingo\Bingo.csproj" />
+    <ProjectReference Include="..\MemoryGame\MemoryGame.csproj" />
+    <ProjectReference Include="..\Pong\Pong.csproj" />
+    <ProjectReference Include="..\Tic_Tac_Toe\Tic_Tac_Toe.csproj" />
+    <ProjectReference Include="..\ToDoList\ToDoList.csproj" />
+    <ProjectReference Include="..\WeatherApp\WeatherApp.csproj" />
+  </ItemGroup>
+
 </Project>

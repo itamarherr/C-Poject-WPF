@@ -14,10 +14,12 @@
     <None Remove="Resources\Main.png" />
     <None Remove="Resources\pencil icon.png" />
     <None Remove="Resources\trash can icon.jpg" />
+    <None Remove="tasks.json" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\ProjectGalary\Common\Common.csproj" />
+
   </ItemGroup>
 
   <ItemGroup>
@@ -28,12 +30,9 @@
     </Resource>
     <Resource Include="Resources\pencil icon.png" />
     <Resource Include="Resources\trash can icon.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="tasks.json">
+    <Resource Include="tasks.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
 
 </Project>

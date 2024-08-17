@@ -16,6 +16,7 @@ using System.Collections.ObjectModel;
 using System;
 using System.Windows.Threading;
 using ToDoList.Models;
+using Common;
 
 namespace ToDoList;
 
@@ -24,12 +25,12 @@ namespace ToDoList;
 /// </summary>
 public partial class MainWindow : Window, INotifyPropertyChanged
 {
-    
+
     public event PropertyChangedEventHandler PropertyChanged;
     public event EventHandler ToManyTasks;
     private ObservableCollection<TaskItem> tasks;
 
-    private readonly string tasksFilePath = "C:\\Users\\itama\\Desktop\\איתמר\\HackerU\\C#\\C#Project\\ToDoList\\tasks.json";
+    private readonly string tasksFilePath = "C:\\Users\\itama\\Desktop\\איתמר\\HackerU\\C#\\C# Project WPF\\ToDoList\\tasks.json";
     public List<string> adviserMessages = new List<string>
          {
         "Note that too many undone tasks are not recommended.",
@@ -56,7 +57,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         LoadTasks();
         ToDoDataGrid.ItemsSource = Tasks;
         ToManyTasks += HandleToManyTasks;
-        
+
 
     }
 
@@ -68,9 +69,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                               adviserMessages[0];
 
         windowMessageDisplay.SetMessage(message, tasks);
-            windowMessageDisplay.Show();
-        
-        
+        windowMessageDisplay.Show();
+
+
     }
 
     private void OnPropertyChanged(string propertyName)
@@ -86,22 +87,20 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         try
         {
             string json = File.ReadAllText(tasksFilePath);
-            Tasks = JsonSerializer.Deserialize<ObservableCollection<TaskItem>>(json) ?? new ObservableCollection<TaskItem>();
-            if (Tasks == null)
+            var loadedTasks = JsonSerializer.Deserialize<ObservableCollection<TaskItem>>(json);
+            if (loadedTasks != null)
             {
-                return;
+                Tasks = loadedTasks;
             }
-            foreach (TaskItem item in Tasks)
-            {
-                Tasks.Add(item);
-            }
-        } catch(Exception ex)
+
+        }
+        catch (Exception ex)
         {
             MessageBox.Show($"failed to load data:{ex.Message}");
 
         }
-       
-       
+
+
     }
     private void SaveTasks()
     {
@@ -166,7 +165,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void SortDataGridByCategory(string selectedCategory)
     {
-        if (selectedCategory == "All") 
+        if (selectedCategory == "All")
         {
             ToDoDataGrid.ItemsSource = Tasks;
         }
@@ -192,8 +191,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ToManyTasks?.Invoke(this, EventArgs.Empty);
     }
 
-    //private void ToDoDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    //{
+    private void ToDoDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
 
-    //}
+    }
 }

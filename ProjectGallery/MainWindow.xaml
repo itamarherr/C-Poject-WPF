@@ -4,14 +4,45 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjectGallery"
+        xmlns:common="clr-namespace:Common.Controls;assembly=Common"
         mc:Ignorable="d"
-        Title="Memory Game" Height="400" Width="600">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="**"/>
-        </Grid.ColumnDefinitions>
-        
+        Title="MainWindow" Height="450" Width="800">
+    <Viewbox>
+        <Grid>
 
-    </Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="4*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1" 
+                       Text="Welcome to my project app!" 
+                       FontSize="30" 
+                       TextAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       Margin="10"/>
+
+            <TextBlock Grid.Row="2" 
+                       Text="Try one of my board games" 
+                       FontSize="20" 
+                       TextAlignment="Center" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       Margin="10"/>
+
+            <WrapPanel Grid.Row="3" 
+                       Margin="10" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Top"
+                       Name="ProjectsPanel"
+                       ItemWidth="200"
+                       ItemHeight="200"/>
+
+            <common:HeaderMenu Grid.Row="0" />
+            <!--<Frame x:Name="MainFrame"/>-->
+        </Grid>
+    </Viewbox>
+
 </Window>
