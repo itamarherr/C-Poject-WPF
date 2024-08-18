@@ -9,6 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\API icon.png" />
+    <None Remove="Resources\C# icon.png" />
+    <None Remove="Resources\json icon.png" />
+    <None Remove="Resources\OOP icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\API icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\C# icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
@@ -20,6 +36,15 @@
     <ProjectReference Include="..\Tic_Tac_Toe\Tic_Tac_Toe.csproj" />
     <ProjectReference Include="..\ToDoList\ToDoList.csproj" />
     <ProjectReference Include="..\WeatherApp\WeatherApp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\json icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\OOP icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

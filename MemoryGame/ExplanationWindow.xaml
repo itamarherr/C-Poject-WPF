@@ -8,8 +8,8 @@
         Title="ExplanationWindow" Height="450" Width="800">
     <Grid>
         <StackPanel Margin="10,20,30,20">
-            
-            <TextBlock Text="Welcome to my Memory Game " FontSize="20" FontWeight="Bold" Margin="0 0 0 20"/>
+
+            <TextBlock Text="Welcome to my Memory Game " HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="0 0 0 20"/>
             <TextBlock Text="Developed as part of my C# project. By clicking the Start Game button you will able to play the Bingo game." TextWrapping="Wrap" Margin="0 0 0 10"/>
 
             <TextBlock Text="you can start by clicking on the START NEW GAME button to activate the game." TextWrapping="Wrap" Margin="0 0 0 10"/>

@@ -60,7 +60,7 @@
 
         <Grid Grid.Row="2" Grid.ColumnSpan="2" Margin="10" x:Name="BingoGrid"/>
 
-        <common:HeaderMenu Grid.Row="0" Grid.Column="0"  Height="15"  />
+        <common:HeaderMenu Grid.Row="0" Grid.Column="0"    />
 
     </Grid>
 </Window>
