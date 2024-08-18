@@ -19,12 +19,13 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Background="WhiteSmoke">
                 <Image Source="/ProjectGallery;component/Resources/API icon.png" Width="24" Height="24" Margin="10"/>
-                <Image Source="/ProjectGallery;component/Resources/C# icon.png" Width="24" Height="24" Margin="10"/>
+                <Image Source="/ProjectGallery;component/Resources/CSharp4 icon.png" Width="24" Height="24" Margin="10"/>
+                <Image Source="/ProjectGallery;component/Resources/.NET icon.png" Width="24" Height="24" Margin="10"/>
                 <Image Source="/ProjectGallery;component/Resources/OOP icon.png" Width="24" Height="24" Margin="10"/>
                 <Image Source="/ProjectGallery;component/Resources/json icon.png" Width="24" Height="24" Margin="10"/>
             </StackPanel>
             <TextBlock Grid.Row="2" 
-                       Text="Welcome to my project app!" 
+                       Text="Welcome to my apps gallery!" 
                        FontSize="30" 
                        TextAlignment="Center" 
                        HorizontalAlignment="Center" 
@@ -32,7 +33,7 @@
                        Margin="10"/>
 
             <TextBlock Grid.Row="3" 
-                       Text="Try one of my board games" 
+                       Text="Try one of my Apps" 
                        FontSize="20" 
                        TextAlignment="Center" 
                        HorizontalAlignment="Center" 
@@ -48,7 +49,6 @@
                        ItemHeight="200"/>
 
             <common:HeaderMenu Grid.Row="0" />
-            <!--<Frame x:Name="MainFrame"/>-->
         </Grid>
     </Viewbox>
 

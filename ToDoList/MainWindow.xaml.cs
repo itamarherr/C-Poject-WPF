@@ -17,6 +17,7 @@ using System;
 using System.Windows.Threading;
 using ToDoList.Models;
 using Common;
+using System.Windows.Media.Animation;
 
 namespace ToDoList;
 
@@ -30,7 +31,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public event EventHandler ToManyTasks;
     private ObservableCollection<TaskItem> tasks;
 
-    private readonly string tasksFilePath = "C:\\Users\\itama\\Desktop\\איתמר\\HackerU\\C#\\C# Project WPF\\ToDoList\\tasks.json";
+    private readonly string tasksFilePath = System.IO.Path.Combine(
+     System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location),
+     "tasks.json");
+  
     public List<string> adviserMessages = new List<string>
          {
         "Note that too many undone tasks are not recommended.",
@@ -80,34 +84,54 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     }
     private void LoadTasks()
     {
-        if (!File.Exists(tasksFilePath))
+
+        if (File.Exists(tasksFilePath))
         {
-            return;
+            try
+            {
+                string json = File.ReadAllText(tasksFilePath);
+                var loadedTasks = JsonSerializer.Deserialize<ObservableCollection<TaskItem>>(json);
+                if (loadedTasks != null)
+                {
+                    Tasks = loadedTasks;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error reading or deserializing tasks: {ex.Message}", "Load Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+        else
+        {
+            MessageBox.Show($"No existing tasks file found at {tasksFilePath}. A new file will be created when you add tasks.", "File Not Found", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+    }
+
+       
+   
+
+
+    
+    private void SaveTasks()
+    {
         try
         {
-            string json = File.ReadAllText(tasksFilePath);
-            var loadedTasks = JsonSerializer.Deserialize<ObservableCollection<TaskItem>>(json);
-            if (loadedTasks != null)
+
+
+
+            string directory = System.IO.Path.GetDirectoryName(tasksFilePath);
+            if (!Directory.Exists(directory))
             {
-                Tasks = loadedTasks;
+                Directory.CreateDirectory(directory);
             }
+            string json = JsonSerializer.Serialize(tasks);
+            File.WriteAllText(tasksFilePath, json);
 
         }
         catch (Exception ex)
         {
-            MessageBox.Show($"failed to load data:{ex.Message}");
-
+            MessageBox.Show($"Error saving tasks: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
         }
-
-
-    }
-    private void SaveTasks()
-    {
-
-        string json = JsonSerializer.Serialize(tasks);
-        File.WriteAllText(tasksFilePath, json);
-
     }
 
     private void AddTask_Click(object sender, RoutedEventArgs e)
@@ -128,7 +152,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             }
 
         }
-        // Refresh the DataGrid to show the new task
+     
         ComboBoxItem selectedItem = CategoryComboBox.SelectedItem as ComboBoxItem;
         if (selectedItem != null)
         {
@@ -155,12 +179,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             SaveTasks();
         }
     }
-
-    //private void SortTasksByCategory()
-    //{
-    //    Tasks = new ObservableCollection<TaskItem>(tasks.OrderBy(task => task.Category));
-
-    //}
 
 
     private void SortDataGridByCategory(string selectedCategory)
@@ -191,8 +209,5 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ToManyTasks?.Invoke(this, EventArgs.Empty);
     }
 
-    private void ToDoDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-    {
-
-    }
+  
 }
