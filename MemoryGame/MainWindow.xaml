@@ -38,7 +38,7 @@
 
         </StackPanel>
         
-        <common:HeaderMenu Grid.Row="0" Grid.Column="0" Height="15"  />
+        <common:HeaderMenu Grid.Row="0" Grid.Column="0"  />
 
     </Grid>
 </Window>

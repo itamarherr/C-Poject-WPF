@@ -48,18 +48,27 @@ namespace ProjectGallery
         }
         private void InitializeProjectButtons()
         {
-
+            int index = 0;
             foreach (var project in projects)
             {
 
                 ProjectButton button = new ProjectButton(project);
-                {
+                
                     Margin = new Thickness(20);
                     Width = 150;
                     Height = 180;
-                };
+                
 
-                ProjectsPanel.Children.Add(button);
+                if (index % 2 == 0)
+                {
+                    FirstRowPanel.Children.Add(button);
+                }
+                else
+                {
+                    SecondRowPanel.Children.Add(button);
+                }
+
+                index++;
 
             }
         }

@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <controls:Board Grid.Column="0" Grid.Row="1" x:Name="MyBoard" />
-        <common:HeaderMenu Grid.Row="0" Grid.Column="0" Height="15" />
+        <common:HeaderMenu Grid.Row="0" Grid.Column="0"/>
 
         <StackPanel Grid.Column="1" Grid.Row="1" Margin="10">
             <TextBlock Text="Tic_Tac_toe Game" FontSize="24" FontWeight="Bold" Margin="10" />

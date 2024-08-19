@@ -32,8 +32,8 @@
           BorderBrush="Blue" 
           BorderThickness="3" 
           CornerRadius="10" >
-           
-                <StackPanel Grid.Row="2" Grid.Column="1" Margin="10">
+
+            <StackPanel Grid.Row="2" Grid.Column="1" Margin="10">
                 <Border
                  Background="White" 
                  Margin="10" 
@@ -41,65 +41,66 @@
                  BorderThickness="3" 
                  CornerRadius="10" >
                     <StackPanel>
-                    <TextBox  FontSize="15" HorizontalAlignment="Center" Margin="10" Name="txtLocation" Text="Search weather" GotFocus="ClearText" MinWidth="100" MinHeight="20"/>
-                    <Button FontSize="20" HorizontalAlignment="Center"  Margin="10" Click="SearchWeatherButton_Click" Content="Search" Name="btn_WeatherSearch" />
+                        <TextBox  FontSize="12" HorizontalAlignment="Center" Margin="10" Name="txtLocation" Text="Location" GotFocus="ClearText" MinWidth="100" MinHeight="20"/>
+                        <Button FontSize="20" HorizontalAlignment="Center"  Margin="10" Click="SearchWeatherButton_Click" Content="Search" Name="btn_WeatherSearch" />
                     </StackPanel>
                 </Border>
             </StackPanel>
-         
+
         </Border>
-            <Border Grid.Row="1" Grid.Column="0" 
+        <Border Grid.Row="1" Grid.Column="0" 
           Background="White" 
           Margin="10" 
           BorderBrush="Blue" 
           BorderThickness="3" 
           CornerRadius="10" >
-                <StackPanel>
-                    <StackPanel  x:Name="currentWeatherPanel"  Margin="10" Visibility="Collapsed">
-                        <TextBlock FontSize="35" Text="Current Weather" FontWeight="Bold"  HorizontalAlignment="Left"/>
-                        <TextBlock FontSize="35" x:Name="txtTemperature" Text="Temperature: " HorizontalAlignment="Left" />
-                        <TextBlock FontSize="35" x:Name="txtDescription" Text="Description: " HorizontalAlignment="Left"/>
-                        <TextBlock FontSize="35" x:Name="txtHumidity" Text="Humidity: " HorizontalAlignment="Left"/>
-                        <TextBlock FontSize="35" x:Name="txtWindSpeed" Text="Wind Speed: " HorizontalAlignment="Left"/>
-                        <TextBlock FontSize="35" x:Name="txtCloud" Text="cloud: " HorizontalAlignment="Left"/>
-                    </StackPanel >
-                    <StackPanel  x:Name="currentWeatherPanelImage"  Margin="10" Visibility="Collapsed">
-                        <Image x:Name="weatherIcon" Width="150"  HorizontalAlignment="Right" />
-                    </StackPanel>
+            <StackPanel Orientation="Horizontal">
+               
+                <StackPanel Grid.Row="1" HorizontalAlignment="Left" x:Name="currentWeatherPanel"  Margin="10" Visibility="Collapsed">
+                    <TextBlock FontSize="35" Text="Current Weather" FontWeight="Bold"  HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="35" x:Name="txtTemperature" Text="Temperature: " HorizontalAlignment="Left" />
+                    <TextBlock FontSize="35" x:Name="txtDescription" Text="Description: " HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="35" x:Name="txtHumidity" Text="Humidity: " HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="35" x:Name="txtWindSpeed" Text="Wind Speed: " HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="35" x:Name="txtCloud" Text="cloud: " HorizontalAlignment="Left"/>
+                </StackPanel >
+                <StackPanel x:Name="currentWeatherPanelImage"  Margin="10" Visibility="Collapsed" VerticalAlignment="Top" Grid.Row="1">
+                    <Image x:Name="weatherIcon" Width="150"  HorizontalAlignment="Right" />
                 </StackPanel>
-            </Border>
+            </StackPanel>
+        </Border>
 
 
-            <Border Grid.Row="2" Grid.Column="0" 
+        <Border Grid.Row="2" Grid.Column="0" 
              Background="White" 
              Margin="10" 
              BorderBrush="Blue" 
              BorderThickness="3" 
               CornerRadius="10" >
-                <StackPanel x:Name="forecastPanel" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" Margin="10" Visibility="Collapsed" HorizontalAlignment="Left" Orientation="Vertical">
-                    <TextBlock  Text="Forecast" FontWeight="Bold" FontSize="35" HorizontalAlignment="Left" />
-                    <ItemsControl ItemsSource="{Binding ForecastItems}" >
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate >
-                            <DataTemplate>
-                                <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Margin="5" Padding="10">
-                                    <StackPanel Orientation="Vertical">
-                                        <TextBlock Text="{Binding FormattedDate}" FontWeight="Bold" FontSize="18" />
-                                        <Image Source="{Binding IconUrl}" Width="50" Height="50" HorizontalAlignment="Center" />
-                                        <TextBlock Text="{Binding Temperature}" FontSize="16" />
-                                        <TextBlock Text="{Binding Description}" FontSize="14" />
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-            </Border>
-            <common:HeaderMenu Grid.Row="0" Grid.Column="0"  Height="15"  />
+            <StackPanel x:Name="forecastPanel" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="0" Margin="10" Visibility="Collapsed" HorizontalAlignment="Left" Orientation="Vertical">
+                <TextBlock  Text="Forecast" FontWeight="Bold" FontSize="35" HorizontalAlignment="Left" />
+                <ItemsControl ItemsSource="{Binding ForecastItems}" >
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate >
+                        <DataTemplate>
+                            <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Margin="5" Padding="10">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="{Binding FormattedDate}" FontWeight="Bold" FontSize="18" />
+                                    <Image Source="{Binding IconUrl}" Width="50" Height="50" HorizontalAlignment="Center" />
+                                    <TextBlock Text="{Binding Temperature}" FontSize="16" />
+                                    <TextBlock Text="{Binding Description}" FontSize="14" />
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+        </Border>
+        <common:HeaderMenu Grid.Row="0" Grid.Column="0"/>
 
     </Grid>
 </Window>

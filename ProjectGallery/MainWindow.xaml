@@ -7,7 +7,7 @@
         xmlns:common="clr-namespace:Common.Controls;assembly=Common"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Viewbox>
+    <Viewbox Stretch="Uniform">
         <Grid>
 
             <Grid.RowDefinitions>
@@ -15,14 +15,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="2*"/>
                 <RowDefinition Height="2*"/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Background="WhiteSmoke">
-                <Image Source="/ProjectGallery;component/Resources/API icon.png" Width="24" Height="24" Margin="10"/>
-                <Image Source="/ProjectGallery;component/Resources/CSharp4 icon.png" Width="24" Height="24" Margin="10"/>
-                <Image Source="/ProjectGallery;component/Resources/.NET icon.png" Width="24" Height="24" Margin="10"/>
-                <Image Source="/ProjectGallery;component/Resources/OOP icon.png" Width="24" Height="24" Margin="10"/>
-                <Image Source="/ProjectGallery;component/Resources/json icon.png" Width="24" Height="24" Margin="10"/>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Image Source="/ProjectGallery;component/Resources/API icon.png" Width="24" Height="24" Margin="20 0 20 0"/>
+                <Image Source="/ProjectGallery;component/Resources/CSharp4 icon.png" Width="24" Height="24" Margin="20 0 20 0"/>
+                <Image Source="/ProjectGallery;component/Resources/.NET icon.png" Width="24" Height="24" Margin="20 0 20 0"/>
+                <Image Source="/ProjectGallery;component/Resources/OOP icon.png" Width="24" Height="24" Margin="20 0 20 0"/>
+                <Image Source="/ProjectGallery;component/Resources/json icon.png" Width="24" Height="24" Margin="20 0 20 0"/>
             </StackPanel>
             <TextBlock Grid.Row="2" 
                        Text="Welcome to my apps gallery!" 
@@ -39,14 +40,14 @@
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center" 
                        Margin="10"/>
-
-            <WrapPanel Grid.Row="4" 
-                       Margin="10" 
-                       HorizontalAlignment="Center" 
-                       VerticalAlignment="Top"
-                       Name="ProjectsPanel"
-                       ItemWidth="200"
-                       ItemHeight="200"/>
+            <Grid Grid.Row="4" Margin="10"  HorizontalAlignment="Center" VerticalAlignment="Top" Name="ProjectsPanel">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <WrapPanel x:Name="FirstRowPanel" Grid.Row="0" ItemWidth="200" ItemHeight="200" HorizontalAlignment="Center" Margin="10"/>
+                <WrapPanel x:Name="SecondRowPanel" Grid.Row="1" ItemWidth="200" ItemHeight="200" HorizontalAlignment="Center" Margin="10"/>
+            </Grid>
 
             <common:HeaderMenu Grid.Row="0" />
         </Grid>

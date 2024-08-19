@@ -12,9 +12,6 @@
     <None Remove="Resources\.NET icon.png" />
     <None Remove="Resources\API icon.png" />
     <None Remove="Resources\C# icon.png" />
-    <None Remove="Resources\CSharp1 icon.png" />
-    <None Remove="Resources\CSharp2 icon.png" />
-    <None Remove="Resources\CSharp3 icon.jpg" />
     <None Remove="Resources\CSharp4 icon.png" />
     <None Remove="Resources\json icon.png" />
     <None Remove="Resources\OOP icon.png" />
@@ -44,15 +41,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\CSharp1 icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\CSharp2 icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\CSharp3 icon.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Resources\CSharp4 icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

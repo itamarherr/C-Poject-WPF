@@ -59,7 +59,7 @@
         </StackPanel>
 
         <Canvas  Grid.Row="2" x:Name="GameCanvas" Background="Black"/>
-        <common:HeaderMenu Grid.Row="0" Grid.Column="0"  Height="15"  />
+        <common:HeaderMenu Grid.Row="0" Grid.Column="0"/>
 
 
 
