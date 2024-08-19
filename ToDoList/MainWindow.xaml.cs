@@ -107,17 +107,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
-       
-   
-
-
-    
     private void SaveTasks()
     {
         try
         {
-
-
 
             string directory = System.IO.Path.GetDirectoryName(tasksFilePath);
             if (!Directory.Exists(directory))

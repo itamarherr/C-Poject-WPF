@@ -27,8 +27,12 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Edit" Click="EditTask_Click" Margin="5,0"/>
-                                <Button Content="Delete" Click="RemoveTask_Click" Margin="5,0"/>
+                                <Button  Click="EditTask_Click" Margin="5,0">
+                                    <Image Source="pack://application:,,,/Resources/pencil icon.png" Width="16" Height="16" />
+                                </Button>
+                                <Button  Click="RemoveTask_Click" Margin="5,0">
+                                    <Image Source="pack://application:,,,/Resources/trash can icon.jpg" Width="16" Height="16" />
+                                </Button>
                                 <CheckBox IsChecked="{Binding IsComplete, UpdateSourceTrigger=PropertyChanged}" Content="Complete" Margin="5,0"/>
                             </StackPanel>
                         </DataTemplate>
@@ -42,10 +46,10 @@
 
             <TextBox x:Name="TaskTextBox" Margin="10 0 10 20" />
 
-            <Label Content="Submit:" Margin="6 0 10 0"/>
+     
             
-            <Button  Margin="10 0 10 20" Click="AddTask_Click" >
-                <Image Source="/Resources/pencil icon.png" Width="16" Height="16" />
+            <Button Background="White"   Margin="10 0 10 20" Click="AddTask_Click" >
+                <Image Source="pack://application:,,,/Resources/Submit icon.jpg " Width="176" Height="66" />
             </Button>
 
             <Label Content="Choose category:" Margin="6 0 10 0"/>

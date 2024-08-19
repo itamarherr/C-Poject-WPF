@@ -9,10 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\calendar icon.png" />
     <None Remove="Resources\checkmark icon.png" />
-    <None Remove="Resources\Main.png" />
     <None Remove="Resources\pencil icon.png" />
+    <None Remove="Resources\Submit icon.jpg" />
     <None Remove="Resources\trash can icon.jpg" />
   </ItemGroup>
 
@@ -22,13 +21,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Resources\calendar icon.png" />
-    <Resource Include="Resources\checkmark icon.png" />
-    <Resource Include="Resources\Main.png">
+    <Resource Include="Resources\checkmark icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\pencil icon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\pencil icon.png" />
-    <Resource Include="Resources\trash can icon.jpg" />
+    <Resource Include="Resources\Submit icon.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\trash can icon.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

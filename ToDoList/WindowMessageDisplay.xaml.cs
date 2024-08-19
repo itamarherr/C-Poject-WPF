@@ -31,7 +31,7 @@ namespace ToDoList
             InitializeComponent();
             InitializeSnoozeTimer();
             closeTimer = new DispatcherTimer();
-            closeTimer.Interval = TimeSpan.FromSeconds(30); // Set the interval to 5 seconds
+            closeTimer.Interval = TimeSpan.FromSeconds(30); 
             closeTimer.Tick += CloseTimer_Tick;
         }
 
@@ -61,15 +61,15 @@ namespace ToDoList
         }
         private void SnoozeButton_Click(object sender, RoutedEventArgs e)
         {
-            // Implement snooze functionality (e.g., hide for a specific period)
+           
             this.Hide();
-            snoozeTimer.Interval = TimeSpan.FromSeconds(20); // Set snooze duration (20 seconds in this example)
+            snoozeTimer.Interval = TimeSpan.FromSeconds(20); 
             snoozeTimer.Start();
             this.Close();
         }
         private void SnoozeTimer_Tick(object sender, EventArgs e)
         {
-            // Show the window again and stop the timer
+  
             snoozeTimer.Stop();
             this.Show();
         }
