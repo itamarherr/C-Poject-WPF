@@ -28,10 +28,10 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button  Click="EditTask_Click" Margin="5,0">
-                                    <Image Source="pack://application:,,,/Resources/pencil icon.png" Width="16" Height="16" />
+                                    <Image Source="pack://application:,,,/ToDoList;component/Resources/pencilIcon.png" Width="16" Height="16" />
                                 </Button>
                                 <Button  Click="RemoveTask_Click" Margin="5,0">
-                                    <Image Source="pack://application:,,,/Resources/trash can icon.jpg" Width="16" Height="16" />
+                                    <Image Source="pack://application:,,,/ToDoList;component/Resources/trash2canicon.jpg" Width="16" Height="16" />
                                 </Button>
                                 <CheckBox IsChecked="{Binding IsComplete, UpdateSourceTrigger=PropertyChanged}" Content="Complete" Margin="5,0"/>
                             </StackPanel>
@@ -41,6 +41,8 @@
             </DataGrid.Columns>
         </DataGrid>
 
+       
+        
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Label Content="Enter Task name:" Margin="6 0 10 0"/>
 
@@ -49,7 +51,7 @@
      
             
             <Button Background="White"   Margin="10 0 10 20" Click="AddTask_Click" >
-                <Image Source="pack://application:,,,/Resources/Submit icon.jpg " Width="176" Height="66" />
+                <Image Source="pack://application:,,,/ToDoList;component/Resources/Submit icon.jpg " Width="176" Height="66" />
             </Button>
 
             <Label Content="Choose category:" Margin="6 0 10 0"/>

@@ -10,7 +10,8 @@
 
   <ItemGroup>
     <None Remove="Resources\checkmark icon.png" />
-    <None Remove="Resources\pencil icon.png" />
+    <None Remove="Resources\Main.png" />
+    <None Remove="Resources\pencilIcon.png" />
     <None Remove="Resources\Submit icon.jpg" />
     <None Remove="Resources\trash can icon.jpg" />
   </ItemGroup>
@@ -24,7 +25,10 @@
     <Resource Include="Resources\checkmark icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\pencil icon.png">
+    <Resource Include="Resources\Main.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\pencilIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Submit icon.jpg">

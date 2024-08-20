@@ -41,6 +41,7 @@ public partial class MainWindow : Window
         InitializeComponent();
         DataContext = this;
         _weatherServices = new WeatherServices(LogMessage);
+        InitialWeatherData();
     }
     private async void SearchWeatherButton_Click(object sender, RoutedEventArgs e)
     {
@@ -51,24 +52,33 @@ public partial class MainWindow : Window
             return;
         }
         await DisplayWeather(location);
-      
+
+        currentWeatherPanel.Visibility = Visibility.Visible;
+        currentWeatherPanelImage.Visibility = Visibility.Visible;
+        forecastPanel.Visibility = Visibility.Visible;
+    }
+    private async void InitialWeatherData()
+    {
+        await DisplayWeather("London");
+
         currentWeatherPanel.Visibility = Visibility.Visible;
         currentWeatherPanelImage.Visibility = Visibility.Visible;
         forecastPanel.Visibility = Visibility.Visible;
     }
 
-
     private async Task DisplayWeather(string location)
     {
         CurrentWeather currentWeather = await _weatherServices.GetCurrentWeatherAsync(location);
-        DisplayCurrentWeatherInfo(currentWeather); 
+        if (currentWeather == null) return;
+        DisplayCurrentWeatherInfo(currentWeather);
 
-        
+
         var forecast = await _weatherServices.GetForecastAsync(location);
-        DisplayForecastInfo(forecast);  
+        if (forecast == null) return;
+        DisplayForecastInfo(forecast);
     }
 
- 
+
     private void ScaleDownImageForHighDensity(BitmapImage bitmapImage)
     {
 
@@ -90,7 +100,7 @@ public partial class MainWindow : Window
             return;
         }
 
-
+        txtLocationDisplay.Text = $"Location: {txtLocation.Text}";
         txtTemperature.Text = $"Temperature: {weatherData.Temperature} °C";
         txtDescription.Text = $"Description: {weatherData.Description}";
         txtHumidity.Text = $"Humidity: {weatherData.Humidity}%";
@@ -110,16 +120,10 @@ public partial class MainWindow : Window
         .ToList();
         foreach (var item in filteredForecast)
         {
-            ForecastItems.Add(item); 
+            ForecastItems.Add(item);
         }
     }
-    //private static List<ForecastItem> GetOneItemPerDay(this List<ForecastItem> forecast)
-    //{
-    //    return forecast
-    //        .GroupBy(item => item.FormattedDate) 
-    //        .Select(group => group.First())
-    //        .ToList();
-    //}
+   
 
 
 

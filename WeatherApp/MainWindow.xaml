@@ -13,8 +13,6 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="5*" />
             <RowDefinition Height="3*" />
-            <!--<RowDefinition Height="*" />-->
-
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*" />
@@ -55,9 +53,10 @@
           BorderThickness="3" 
           CornerRadius="10" >
             <StackPanel Orientation="Horizontal">
-               
+
                 <StackPanel Grid.Row="1" HorizontalAlignment="Left" x:Name="currentWeatherPanel"  Margin="10" Visibility="Collapsed">
                     <TextBlock FontSize="35" Text="Current Weather" FontWeight="Bold"  HorizontalAlignment="Left"/>
+                    <TextBlock FontSize="25" x:Name="txtLocationDisplay" Text="" HorizontalAlignment="Left" />
                     <TextBlock FontSize="35" x:Name="txtTemperature" Text="Temperature: " HorizontalAlignment="Left" />
                     <TextBlock FontSize="35" x:Name="txtDescription" Text="Description: " HorizontalAlignment="Left"/>
                     <TextBlock FontSize="35" x:Name="txtHumidity" Text="Humidity: " HorizontalAlignment="Left"/>

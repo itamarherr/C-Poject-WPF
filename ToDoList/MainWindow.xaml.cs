@@ -31,10 +31,13 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public event EventHandler ToManyTasks;
     private ObservableCollection<TaskItem> tasks;
 
-    private readonly string tasksFilePath = System.IO.Path.Combine(
-     System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location),
-     "tasks.json");
-  
+    //private readonly string tasksFilePath = System.IO.Path.Combine(
+    // System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location),
+    // "tasks.json");
+    private readonly string tasksFilePath = @"C:\Users\itama\Desktop\איתמר\HackerU\C#\C# Poject WPF\ToDoList\bin\Debug\net8.0-windows\tasks.json";
+
+
+
     public List<string> adviserMessages = new List<string>
          {
         "Note that too many undone tasks are not recommended.",

@@ -133,14 +133,6 @@ public partial class MainWindow : Window
 
     }
 
-    //public void  ResetGame_Click(object sender, RoutedEventArgs e)
-    //{
-    //    foreach (var button in buttons)
-    //    {
-    //        button.IsEnabled = true;
-    //        button.Background = SystemColors.ControlDarkBrush;
-    //    }
-    //}
     private void DrawNumber_Click(object sender, RoutedEventArgs e)
     {
         try

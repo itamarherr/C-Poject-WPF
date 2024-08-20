@@ -120,13 +120,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         Canvas.SetLeft(ball, Canvas.GetLeft(ball) + ballSpeedX);
         Canvas.SetTop(ball, Canvas.GetTop(ball) + ballSpeedY);
 
-        // Ball collision with top and bottom walls
+        
         if (Canvas.GetTop(ball) <= 0 || Canvas.GetTop(ball) >= GameCanvas.ActualHeight - ball.Height)
         {
             ballSpeedY = -ballSpeedY;
         }
 
-        // Ball collision with paddles
         if (Canvas.GetLeft(ball) <= Canvas.GetLeft(paddle1) + paddle1.Width &&
             Canvas.GetTop(ball) + ball.Height >= Canvas.GetTop(paddle1) &&
             Canvas.GetTop(ball) <= Canvas.GetTop(paddle1) + paddle1.Height)
@@ -141,7 +140,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             ballSpeedX = -ballSpeedX;
         }
 
-        // Ball out of bounds (left or right side)
+        
         if (Canvas.GetLeft(ball) <= 0 || Canvas.GetLeft(ball) >= GameCanvas.ActualWidth - ball.Width)
         {
             ResetBall();

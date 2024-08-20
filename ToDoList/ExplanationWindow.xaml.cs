@@ -24,6 +24,7 @@ namespace ToDoList
         public ExplanationWindow(Action onStartGame)
         {
             InitializeComponent();
+         
             _onStartGame = onStartGame;
         }
 
