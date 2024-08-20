@@ -31,7 +31,7 @@
                                     <Image Source="pack://application:,,,/ToDoList;component/Resources/pencilIcon.png" Width="16" Height="16" />
                                 </Button>
                                 <Button  Click="RemoveTask_Click" Margin="5,0">
-                                    <Image Source="pack://application:,,,/ToDoList;component/Resources/trash2canicon.jpg" Width="16" Height="16" />
+                                    <Image Source="pack://application:,,,/ToDoList;component/Resources/trash can icon.jpg" Width="16" Height="16" />
                                 </Button>
                                 <CheckBox IsChecked="{Binding IsComplete, UpdateSourceTrigger=PropertyChanged}" Content="Complete" Margin="5,0"/>
                             </StackPanel>
