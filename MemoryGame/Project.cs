@@ -17,9 +17,9 @@ namespace MemoryGame
         public string IsRecommended { get; set; } = "RECOMMENDED";
         public void Open()
         {
-
+        
         }
-
+        
         public BitmapImage Icon
         {
             get
