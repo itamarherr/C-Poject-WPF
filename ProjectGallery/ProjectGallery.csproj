@@ -31,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\ProjectGalary\Common\Common.csproj" />
     <ProjectReference Include="..\Bingo\Bingo.csproj" />
     <ProjectReference Include="..\MemoryGame\MemoryGame.csproj" />
     <ProjectReference Include="..\Pong\Pong.csproj" />

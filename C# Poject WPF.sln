@@ -12,8 +12,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bingo", "Bingo\Bingo.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectGallery", "ProjectGallery\ProjectGallery.csproj", "{C2BBF231-1467-4E9F-803D-0524F142C6DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\ProjectGalary\Common\Common.csproj", "{0441A93D-C025-4CDC-B8FE-B6E9B0515360}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MemoryGame", "MemoryGame\MemoryGame.csproj", "{C2325CD9-0838-4CD5-BDCC-F7331CA6F650}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pong", "Pong\Pong.csproj", "{AF2BC523-1AB8-43FD-99E4-863172CB5482}"
@@ -23,6 +21,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoList", "ToDoList\ToDoList.csproj", "{864BFB68-0DEA-4914-A4C0-82F8EED8EF69}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherApp", "WeatherApp\WeatherApp.csproj", "{37EFF912-5216-4246-B538-8AAB0487B1AE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{EBED7322-D286-4586-9C6C-5F061BCE93EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +38,6 @@ Global
 		{C2BBF231-1467-4E9F-803D-0524F142C6DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2BBF231-1467-4E9F-803D-0524F142C6DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2BBF231-1467-4E9F-803D-0524F142C6DE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0441A93D-C025-4CDC-B8FE-B6E9B0515360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0441A93D-C025-4CDC-B8FE-B6E9B0515360}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0441A93D-C025-4CDC-B8FE-B6E9B0515360}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0441A93D-C025-4CDC-B8FE-B6E9B0515360}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C2325CD9-0838-4CD5-BDCC-F7331CA6F650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C2325CD9-0838-4CD5-BDCC-F7331CA6F650}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2325CD9-0838-4CD5-BDCC-F7331CA6F650}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -62,6 +58,10 @@ Global
 		{37EFF912-5216-4246-B538-8AAB0487B1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37EFF912-5216-4246-B538-8AAB0487B1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37EFF912-5216-4246-B538-8AAB0487B1AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBED7322-D286-4586-9C6C-5F061BCE93EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBED7322-D286-4586-9C6C-5F061BCE93EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBED7322-D286-4586-9C6C-5F061BCE93EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBED7322-D286-4586-9C6C-5F061BCE93EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
