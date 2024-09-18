@@ -37,6 +37,7 @@
     <ProjectReference Include="..\Tic_Tac_Toe\Tic_Tac_Toe.csproj" />
     <ProjectReference Include="..\ToDoList\ToDoList.csproj" />
     <ProjectReference Include="..\WeatherApp\WeatherApp.csproj" />
+  <ProjectReference Include="..\Common\Common.csproj" />
   </ItemGroup>
 
   <ItemGroup>
